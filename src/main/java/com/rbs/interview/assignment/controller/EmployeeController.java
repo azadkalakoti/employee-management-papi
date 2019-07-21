@@ -19,7 +19,7 @@ import com.rbs.interview.assignment.model.core.SaveEmployeeListRequest;
 import com.rbs.interview.assignment.service.EmployeeService;
 
 @RestController
-@RequestMapping(value = "/rbs")
+@RequestMapping(value = "/api")
 public class EmployeeController {
 
 	@Autowired
