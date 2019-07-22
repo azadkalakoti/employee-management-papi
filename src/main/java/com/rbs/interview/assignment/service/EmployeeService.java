@@ -6,11 +6,12 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import com.rbs.interview.assignment.exception.ResourceNotFoundException;
 import com.rbs.interview.assignment.model.Employee;
 import com.rbs.interview.assignment.model.SortCriteria;
-import com.rbs.interview.assignment.model.core.EmployeeDetailsResponse;
 import com.rbs.interview.assignment.model.core.RetreiveEmployeeListResponse;
 import com.rbs.interview.assignment.model.core.SaveEmployeeListRequest;
 
@@ -64,20 +65,14 @@ public class EmployeeService {
 	 * Service method which returns employee details using  emloyee ID
 	 * @param empId - Employee ID parameter
 	 * @return EmployeeDetailsResponse object
+	 * @throws ResourceNotFoundException 
 	 */
-	public EmployeeDetailsResponse getEmployeeDetails(long empId) {
+	public ResponseEntity<Employee> getEmployeeDetails(long empId) throws ResourceNotFoundException {
 		
-		EmployeeDetailsResponse employeeDetailsResponse = new EmployeeDetailsResponse();
-		List<Employee> empList = employeeRepository.findAll();
-		
-		Employee employee = new Employee();
-		employee = empList.stream()
-			.filter(emp -> empId == emp.getEmpId()).findAny()	
-			.orElse(null);
-		
-		employeeDetailsResponse.setEmployee(employee);
-		
-		return employeeDetailsResponse;
+		Employee employee = employeeRepository.findById(empId)
+				.orElseThrow(() -> new ResourceNotFoundException("Employee not found for this id :: " + empId));
+				
+		return ResponseEntity.ok().body(employee);
 	}
 	
 	/**

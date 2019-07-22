@@ -5,6 +5,7 @@ import java.util.List;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -13,13 +14,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.rbs.interview.assignment.exception.ResourceNotFoundException;
 import com.rbs.interview.assignment.model.Employee;
 import com.rbs.interview.assignment.model.SortCriteria;
-import com.rbs.interview.assignment.model.core.EmployeeDetailsResponse;
 import com.rbs.interview.assignment.model.core.RetreiveEmployeeListResponse;
 import com.rbs.interview.assignment.model.core.SaveEmployeeListRequest;
 import com.rbs.interview.assignment.service.EmployeeService;
 
+/**
+ * Rest Controller to handle restful web-service calls
+ * @author Azad Singh
+ *
+ */
 @RestController
 @RequestMapping(value = "/api")
 public class EmployeeController {
@@ -68,10 +74,10 @@ public class EmployeeController {
 	 * 			- Provided employee id
 	 * @return
 	 * 			- Employee details' response object
+	 * @throws ResourceNotFoundException 
 	 */
 	@GetMapping(value = "/employees/{id}")
-	public EmployeeDetailsResponse getEmployeeDetails(@PathVariable("id") long empId) {
-		
+	public ResponseEntity<Employee> getEmployeeDetails(@PathVariable("id") long empId) throws ResourceNotFoundException {
 		return this.employeeService.getEmployeeDetails(empId);
 	}
 	
