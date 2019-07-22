@@ -1,5 +1,7 @@
 package com.rbs.interview.assignment.controller;
 
+import java.util.List;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -56,7 +58,7 @@ public class EmployeeController {
 	 * 			- Employee list response object
 	 */
 	@GetMapping("/employees")
-    public RetreiveEmployeeListResponse getAllEmployees() {
+    public List<Employee> getAllEmployees() {
         return employeeService.getEmployees();
     }
 	
