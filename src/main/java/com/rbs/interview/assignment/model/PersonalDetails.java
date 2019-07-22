@@ -2,10 +2,8 @@ package com.rbs.interview.assignment.model;
 
 import java.util.Date;
 
-import javax.persistence.Entity;
-
 /**
- * Model class for Employee's Persona details
+ * Model class for Employee's Personal details
  * @author Azad Singh
  *
  */
