@@ -21,7 +21,7 @@ import com.rbs.interview.assignment.model.core.SaveEmployeeListRequest;
  *
  */
 @Service
-public class EmployeeService {
+public class EmployeeService2 {
 	
 	@Autowired
 	private EmployeeRepository employeeRepository;
@@ -53,11 +53,15 @@ public class EmployeeService {
 	
 	/**
 	 * Service method which returns list of employees
-	 * @return List of Employee object
+	 * @return RetreiveEmployeeListResponse object
 	 */
-	public List<Employee> getEmployees() {
+	public RetreiveEmployeeListResponse getEmployees() {
 		
-		return employeeRepository.findAll();
+		RetreiveEmployeeListResponse retreiveEmployeeListResponse 
+									= new RetreiveEmployeeListResponse();
+		retreiveEmployeeListResponse.setEmpList(employeeRepository.findAll());
+		
+		return retreiveEmployeeListResponse;
 	}
 
 	/**
