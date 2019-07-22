@@ -1,7 +1,7 @@
 # Employee Portal Service API repository
 Process API for Employee details in a company
 
-##### Service Enpoints
+##### Services and Description
 * Get Employee list
 
 	- Method: GET
