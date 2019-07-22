@@ -15,11 +15,11 @@ Process API for Employee details in a company
 		-- request-parameter: "type"
 	- description: Retrieves sorted Employee list - Sorted by any attribute(type) of Employee(ex. Name, Salary, Hiring date)
 	
-* Get Employee's Details
+* Get Employee Details
 	
 	- Method: GET
 	- endpoint: /api/employees/{id}
-	- description: Retrieve Employee's detail using provided employee id 
+	- description: Retrieve Employee's detail using provided employee id. It throws 404 error if employee id record is not present in BE.
 	
 * Saves an employee
 
