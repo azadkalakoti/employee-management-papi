@@ -5,6 +5,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
+/**
+ * Spring boot application class
+ * @author Azad Singh
+ *
+ */
 @SpringBootApplication
 @EnableSwagger2
 public class EmployeeApplication {

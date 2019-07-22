@@ -1,7 +1,5 @@
 package com.rbs.interview.assignment.model;
 
-import javax.persistence.Entity;
-
 /**
  * Address Details Object
  * @author Azad Singh
