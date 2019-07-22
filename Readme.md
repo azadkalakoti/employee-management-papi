@@ -11,7 +11,7 @@ Process API for Employee details in a company
 * Get Sorted Employee list
 
 	- Method: GET
-	- endpoint: /api/sorted-employee-list 
+	- endpoint: /api/employees/sorted
 		-- request-parameter: "type"
 	- description: Retrieves sorted Employee list - Sorted by any attribute(type) of Employee(ex. Name, Salary, Hiring date)
 	

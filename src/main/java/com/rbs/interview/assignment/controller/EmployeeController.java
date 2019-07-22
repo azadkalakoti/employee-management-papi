@@ -88,7 +88,7 @@ public class EmployeeController {
 	 * @return
 	 * 			- Employee list response object
 	 */
-	@GetMapping(value = "/sorted-employee-list")
+	@GetMapping(value = "/employees/sorted")
 	public RetreiveEmployeeListResponse getSortedEmployeeList(@RequestParam("type") SortCriteria sortingCriteria) {
 		
 		return this.employeeService.getSortedEmployeeList(sortingCriteria);
