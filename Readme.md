@@ -1,5 +1,17 @@
 # Employee Portal Service API repository
-Process API for Employee details in a company
+Process API for Employee details in a company.
+
+# Introduction
+This API Manages a typical Employee in a company.
+It can add a Single Employee or can create all employee records.
+It can retireve list of Employees and can get the list sorted by a key.
+You may retrieve details of Eployee as well.
+
+# Overview
+This API is built on Spring boot 2.0.5. You must have Java 8 and other dependent libraries resolved using maven, to run this
+
+# Error Codes
+It returns a basic 404 HttpStatus with details if employee detail is not found.
 
 ##### Services and Description
 * Get Employee list
